@@ -31,6 +31,7 @@ class Session {
                 //auth
                 $_SESSION['valid_user'] = $this->username;
                 $_SESSION['domainid'] = $this->userid;
+                $_SESSION['user_key'] = md5($this->username.$this->password);
                 if(!empty($_SESSION['redirect'])) {
                     header("Location: ".$_SESSION['redirect']); 
                 }

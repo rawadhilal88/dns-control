@@ -19,6 +19,7 @@ $tpl->assign('ip', $dns->zoneIp($domain));
 $tpl->assign('records_a', $a);
 $tpl->assign('records_cname', $cname);
 $tpl->assign('records_mx', $mx);
+$tpl->assign('user_key', $_SESSION['user_key']);
 $tpl->display("index.htm");
 
 ?>

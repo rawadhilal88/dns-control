@@ -30,6 +30,12 @@ class="contentBGNewsMainTD"> <br>
             Viewing DNS Record: <{$domain}> : IP <{$ip}>
           </center></b></p></td>
         </tr>
+        <tr> <{if $smarty.request.msg}><center><font color="<{$color}>"><b><{$msg}></b></font></center><br><{/if}>
+          <td bgcolor="whitesmoke" colspan="2"><p><center>
+            <b>Dynamic IP API</b>
+            <br><a href= "ddns.php?linked&key=<{$user_key}>">Direct URL</a> Update root domain and all similar ip
+          </center></p></td>
+        </tr>
         <tr> 
           <td bgcolor="#ffffff" colspan="2"><center>
             <table width="100%"  border="0" cellspacing="0" cellpadding="0">
@@ -45,6 +51,7 @@ class="contentBGNewsMainTD"> <br>
               <tr bgcolor="<{cycle name=a values="whitesmoke,#ffffff"}>">
                 <td><{$records_a[a].name}></td>
                 <td><{$records_a[a].address}></td>
+                <td><a href="ddns.php?a=<{$records_a[a].name}>&key=<{$user_key}>">Direct URL</a></td>
                 <td><a href="modrecord.php?act=edit&type=a&recordid=<{$records_a[a].recordid}>">Edit</a></td>
                 <td><a href="modrecord.php?act=del&type=a&recordid=<{$records_a[a].recordid}>" onClick="return delrecord('<{$records_a[a].name}>')">Delete</a></td>
               </tr>
@@ -58,6 +65,7 @@ class="contentBGNewsMainTD"> <br>
               <tr bgcolor="<{cycle name=cname values="whitesmoke,#ffffff"}>">
                 <td><{$records_cname[cname].name}></td>
                 <td><{$records_cname[cname].address}></td>
+                <td></td>
                 <td><a href="modrecord.php?act=edit&type=cname&recordid=<{$records_cname[cname].recordid}>">Edit</a></td>
                 <td><a href="modrecord.php?act=del&type=cname&recordid=<{$records_cname[cname].recordid}>" onClick="return delrecord('<{$records_cname[cname].name}>')">Delete</a></td>
               </tr>
@@ -71,6 +79,7 @@ class="contentBGNewsMainTD"> <br>
               <tr bgcolor="<{cycle name=mx values="whitesmoke,#ffffff"}>">
                 <td><{$records_mx[mx].priority}></td>
                 <td><{$records_mx[mx].address}></td>
+                <td></td>
                 <td><a href="modrecord.php?act=edit&type=mx&recordid=<{$records_mx[mx].recordid}>">Edit</a></td>
                 <td><a href="modrecord.php?act=del&type=mx&recordid=<{$records_mx[mx].recordid}>" onClick="return delrecord('<{$records_mx[mx].name}>')">Delete</a></td>
               </tr>
