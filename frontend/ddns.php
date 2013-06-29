@@ -107,7 +107,7 @@ else{ //Change only sub domain to new ip
 }
 
 //Process modification queue
-$dns->processModqueue();
+//$dns->processModqueue();
 
 http_response_code(200);
 ?>
